@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>How to confront Impostor Syndrome</title>
+</head>
+
+<body>
+    <p>Do you feel like you're not a real developer? Do you beat yourself up for making simple mistakes in your code? Do
+        you think you're not smart enough? That you're just not cut out for web development?</p>
+
+    <button onclick="getInfo()">Ask me Questions</button>
+
+    <p id="advice"></p>
+
+    <script>
+
+        function getInfo() {
+            let firstName = prompt('What is your first name?');
+            let fasterCoder = prompt('Do you feel like other people always understand new coding concepts faster or better than you? (yes/no)');
+            let smartCoder = prompt('Are you smart enough to be a developer? (yes/no)');
+            let badCoder = prompt("Do other people think you're a bad coder? (yes/no)");
+            let codeFail = prompt('Has your code failed? (yes/no)');
+
+            let message = '<p> Hi ' + firstName + ', you are already a developer.</p>';
+
+            if (fasterCoder === 'yes') {
+                message = message + "<p>No one is ever an expert in software development. There will always be more to learn, which means there will always be someone who knows something you don’t. Instead of thinking about what <em>they</em> know, focus on your own skills and knowledge. You will never know everything; instead, try to get comfortable with being uncomfortable. Go after what you don't know. Use it to fuel your growth, not your self-doubt.</p>";
+            } if (smartCoder === 'no') {
+                message = message + "<p>In her book, <em>The New Psychology of Success</em>, author Carol Dweck theorizes that some people have a <em>fixed mindset</em>, believing that intelligence is fixed at birth. These people think that the smarter you are, the easier you understand things. But Dweck believes that intelligence is directly tied to effort and challenge. By adopting a <em>growth mindset</em>, you can view obstacles as opportunities to learn, to help you improve. If you're feeling inadequate, it's a signal that you’re being challenged. This is an opportunity to learn, to become better, and to grow.</p>";
+            } if (badCoder === 'yes') {
+                message = message + "<p>Impostor syndrome thrives when all you do is think. Ask your boss, or a colleague or mentor who you trust, what they think you’re doing well. Then ask if there is anything specific they feel you need to work on in the short-term, and what measurable goals you might set to judge if you improved. Try setting some longer-term (3-6 months), measurable goals with them as well.</p>";
+            } if (codeFail === 'yes') {
+                message = message + "<p>You might be thinking about a project, or some code you wrote, that failed. Instead, try spending 20 minutes reflecting on your successes so far, and remind yourself of how far you’ve come. This will help balance the scales of positive vs negative self-talk that is at the heart of impostor syndrome.</p>";
+            }
+            document.getElementById("advice").innerHTML = message;
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
